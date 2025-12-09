@@ -243,8 +243,6 @@ python -m agent.memory.seed_faiss
 # Clear Python cache
 find . -type d -name __pycache__ -exec rm -r {} +
 
-# Check for missing dependencies
-pip check
 
 ## Demo & Presentation
 
