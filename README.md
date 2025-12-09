@@ -38,20 +38,6 @@ This project implements a fully functional Agentic AI System using LangGraph for
 - **Long-Term Memory**: FAISS vector database for persistent storage
 - **Human-in-the-loop**: User confirmation required before plan execution
 
-### Major Components
-
-| Component | Description |
-|-----------|-------------|
-| Gemini LLM | Generates plans, answers questions, routes decisions |
-| LangGraph State Machine | Controls execution flow between model, tools, and memory |
-| Calculator Tool | Safe evaluation of math expressions |
-| Short-Term Memory | Stores last user messages during session |
-| FAISS Long-Term Memory | Stores embeddings of past interactions |
-| Human-in-the-loop | Confirms plan execution |
-
-### Architecture Diagram
-
-A full architecture diagram is included in the repository: `architecture_diagram.svg`
 
 ### High-Level Workflow
 
@@ -76,8 +62,6 @@ The system follows a multi-step pipeline:
 │       ├── faiss_store.py      # FAISS database for long-term memory
 │       └── seed_faiss.py       # Seeder for example vector entries
 ├── requirements.txt            # Python dependencies
-├── architecture_diagram.svg    # Visual diagram of the system
-├── demo_script.txt             # Demo walkthrough for presentation
 ├── README.md                   # This documentation
 └── .gitignore                  # Ignores venv and secrets
 
@@ -109,7 +93,9 @@ pip install -r requirements.txt
 
 ### Step 4: Configure Environment Variables
 
-Create a .env file in the root directory:
+Create a .envcd ~/swe645-agent
+cat .gitignore
+ file in the root directory:
 
 ```
 GEMINI_API_KEY=YOUR_KEY_HERE
@@ -118,84 +104,6 @@ GEMINI_API_KEY=YOUR_KEY_HERE
 ### Step 5: Run the Agent
 python -m agent.main
 
-
-## Application Features
-
-### Autonomous LLM Reasoning
-
-- Gemini analyzes user queries and generates execution plans
-- Intelligent routing between model responses and tool calls
-- Context-aware decision making based on conversation history
-
-### Tool Integration
-
-- **Calculator Tool**: Safe evaluation of mathematical expressions
-- Extensible architecture for adding custom tools
-- Automatic tool selection based on query type
-
-### Memory Systems
-
-- **Short-Term Memory**: Maintains conversation context within session
-- **Long-Term Memory**: FAISS vector database stores past interactions
-- **Memory Retrieval**: Query past conversations using `retrieve:` prefix
-
-### Human-in-the-Loop
-
-- Plan approval required before execution
-- Transparent decision-making process
-- User control over agent actions
-
-### Responsive Design
-
-- Clean, intuitive command-line interface
-- Clear plan visualization before execution
-- Real-time feedback and confirmation prompts
-
-## Usage Examples
-
-### Example 1: Math Tool Usage (Tool Use Path)
-
-User> 1+4
-
-=== AGENT PLAN ===
-Calculate 1+4 using calculator tool.
-
-Execute plan? (y/n) > y
-Result: 5
-
-### Example 2: Normal LLM Question
-
-User> What is LangGraph?
-
-[Gemini generates educational explanation about LangGraph framework]
-
-### Example 3: Long-Term Memory Retrieval
-
-User> retrieve: math
-
-[FAISS returns saved memory entries related to math queries]
-
-## Monitoring and Features
-
-### Core Capabilities
-
-- ✅ Autonomous LLM reasoning and planning
-- ✅ Dynamic tool calling via LangGraph
-- ✅ Human-in-the-loop approval system
-- ✅ Short-term memory context management
-- ✅ FAISS vector database integration
-- ✅ Intelligent routing logic
-- ✅ Fully modular architecture
-
-### Agent Features
-
-- ✔ Autonomous LLM Reasoning
-- ✔ Tool Calling via LangGraph
-- ✔ HITL Approval
-- ✔ Short-Term Memory Context
-- ✔ FAISS Vector Database
-- ✔ Dynamic Routing Logic
-- ✔ Fully Modular Architecture
 
 ## Troubleshooting
 
@@ -243,18 +151,8 @@ python -m agent.memory.seed_faiss
 # Clear Python cache
 find . -type d -name __pycache__ -exec rm -r {} +
 
-
-## Demo & Presentation
-
-A 5-minute demo contains:
-
-- Agent startup and initialization
-- Math tool usage demonstration
-- LLM explanation capabilities
-- Memory retrieval functionality
-- Architecture overview and walkthrough
-
-The demo script is located in: `demo_script.txt`
+# Check for missing dependencies
+pip check
 
 ## Contributions
 
@@ -276,7 +174,7 @@ This project was completed collaboratively by 5 team members with equal distribu
 
 - Built the agent's routing logic for deciding between LLM, tools, or ending execution
 - Developed FAISS memory testing, validating correct retrieval behavior
-- Developed the CLI orchestrator and worked debug runtime flow
+- Developed parts of the CLI orchestrator and worked debug runtime flow
 
 ### Dhanush Neelakantan
 
