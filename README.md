@@ -276,7 +276,7 @@ This project was completed collaboratively by 5 team members with equal distribu
 
 - Built the agent's routing logic for deciding between LLM, tools, or ending execution
 - Developed FAISS memory testing, validating correct retrieval behavior
-- Developed parts of the CLI orchestrator and worked debug runtime flow
+- Developed the CLI orchestrator and worked debug runtime flow
 
 ### Dhanush Neelakantan
 
